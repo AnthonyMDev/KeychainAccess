@@ -130,11 +130,6 @@ public class Keychain {
     
     private let options: Options
     
-    private let NSFoundationVersionNumber_iOS_7_1 = 1047.25
-    private let NSFoundationVersionNumber_iOS_8_0 = 1140.11
-    private let NSFoundationVersionNumber_iOS_8_1 = 1141.1
-    private let NSFoundationVersionNumber10_9_2 = 1056.13
-    
     // MARK:
     
     public convenience init() {
@@ -289,7 +284,9 @@ public class Keychain {
         
         query[kSecAttrAccount as String] = key
         #if os(iOS)
-        if floor(NSFoundationVersionNumber) > floor(NSFoundationVersionNumber_iOS_7_1) {
+        if #available(iOS 9.0, *) {
+            query[kSecUseAuthenticationUI as String] = kCFBooleanFalse
+        } else if #available(iOS 8.0, *) {
             query[kSecUseNoAuthenticationUI as String] = kCFBooleanTrue
         }
         #endif

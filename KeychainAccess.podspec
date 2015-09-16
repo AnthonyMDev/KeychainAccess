@@ -19,7 +19,7 @@ Pod::Spec.new do |s|
   s.screenshots      = "https://raw.githubusercontent.com/kishikawakatsumi/KeychainAccess/master/Screenshots/01.png"
   s.license          = 'MIT'
   s.author           = { "kishikawa katsumi" => "kishikawakatsumi@mac.com" }
-  s.source           = { :git => "https://github.com/kishikawakatsumi/KeychainAccess.git", :tag => "v#{s.version}" }
+  s.source           = { :git => "https://github.com/AnthonyMDev/KeychainAccess.git", :tag => "v#{s.version}" }
   s.social_media_url = 'https://twitter.com/k_katsumi'
 
   s.ios.deployment_target = "8.0"
